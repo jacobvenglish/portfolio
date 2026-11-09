@@ -5,6 +5,14 @@ h1 {
     text-transform: uppercase;
 }
 
+h2{
+    font-family: Helvetica;
+    color: #fafafa;
+    font-size: 48px ;
+    text-transform: uppercase;
+
+}
+
 h3{
     font-family: Helvetica;
     color: #fafafa;
@@ -19,6 +27,18 @@ h4{
     text-transform: uppercase;
 }
 
+.hero{
+    padding-top: 48px;
+
+}
+
+p { 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: #fafafa;
+    line-height: 25px;
+}
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -29,21 +49,16 @@ a{
 }
 
 body{
-    margin: 30px 120px ;
     background-color: #0a0a0a;
     max-width: 1440px;
+    margin: 30px auto;      /* auto = equal left/right space */
+    padding: 0 120px;       /* your 120px gutter now lives here */
+    box-sizing: border-box; /* keeps total width at 1440, padding included */
 }
 
 .profile-pic{
     max-height: 588px;
     border: 5px solid #fafafa;
-}
-
-p { 
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12px;
-    color: #fafafa;
-    line-height: 25px;
 }
 
 .bio{
@@ -56,7 +71,6 @@ p {
 }
 
 .mini-gallery{
-    padding-top: 128px;
     justify-content: space-between;
     display: flex;
 }
@@ -65,4 +79,38 @@ p {
     width: 377px;
     height: 377px;
     border: 5px solid #fafafa;
+}
+
+#logo {
+    max-height: 75px;
+}
+
+.mini-gallery-container{
+padding-top: 128px;
+}
+
+.section-header{
+    padding-top: 100px;
+}
+
+.project-photo{
+    width: 100%;
+    border: 5px solid #fafafa;
+}
+
+.project-header{
+    padding-bottom: 20px;
+}
+
+.projectbox{
+    padding-bottom: 72px;
+}
+
+.gallery-image{
+    width: 100%;
+    max-width: 387;
+}
+
+#gallery{
+    display: flex;
 }
