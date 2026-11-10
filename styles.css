@@ -115,7 +115,7 @@ body{
     padding-bottom: 20px;
 }
 
-#gallery{
+.gallery{
     padding-top: 128px;
     columns: 3;
     column-gap: 20px;
