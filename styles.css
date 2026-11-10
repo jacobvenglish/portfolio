@@ -193,7 +193,7 @@ html {
     justify-content: center;
     align-items: center;
     z-index: 100;
-    cursor: crosshair;
+    cursor: zoom-out;
 }
 
 .lightbox.open {
@@ -207,5 +207,5 @@ html {
 }
 
 .gallery-image {
-    cursor: zoom-in;
+    cursor: crosshair;
 }
