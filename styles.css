@@ -115,6 +115,20 @@ body{
     padding-bottom: 20px;
 }
 
+@keyframes bounceAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.gallery-image.gallery-image:hover {
+  animation-name: bounceAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 2s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
 .gallery{
     padding-top: 128px;
     columns: 3;
