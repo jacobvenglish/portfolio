@@ -9,10 +9,10 @@
 <body>
     <div class="header">
         <div class="dropdown">
-            <a href="index.html/#top"><h4>Jacob English</h4></a>
+            <a href="index.html#top"><h4>Jacob English</h4></a>
             <div class="dropdown-content">
-                <h4><a href="index.html/#marketing">Marketing</a></h4>
-                <h4><a href="index.html/#Side-Quests">Side Quests</a></h4>
+                <h4><a href="index.html#marketing">Marketing</a></h4>
+                <h4><a href="index.html#Side-Quests">Side Quests</a></h4>
                 <h4><a href="gallery.html">Photography</a></h4>
                 <h4><a href="sketches.html">Sketches</a></h4>
             </div>
@@ -20,12 +20,33 @@
         <img id="logo" src="media/Homepage/fingerprint-logo.png" alt="fingerprint logo">
         <h4><a href="mailto:jenglish_work@fastmail.com">Contact</a></h4>
     </div>
+
     <div class="gallery">
-        <img class="gallery-image" src="./Media/Gallery/boardwalkers.jpg">
-        <img class="gallery-image" src="./Media/Gallery/carinpalmsprings.jpg">
-        <img class="gallery-image" src="./Media/Gallery/catuses.jpg">
-        <img class="gallery-image" src="./Media/Gallery/flag.jpg">
-        <img class="gallery-image" src="./Media/Gallery/japancars.JPG">
+        <img class="gallery-image" src="./Media/Gallery/boardwalkers.jpg" alt="">
+        <img class="gallery-image" src="./Media/Gallery/carinpalmsprings.jpg" alt="">
+        <img class="gallery-image" src="./Media/Gallery/catuses.jpg" alt="">
+        <img class="gallery-image" src="./Media/Gallery/flag.jpg" alt="">
+        <img class="gallery-image" src="./Media/Gallery/japancars.JPG" alt="">
     </div>
+
+    <div class="lightbox">
+        <img src="" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox img');
+
+        document.querySelectorAll('.gallery-image').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('open');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('open');
+        });
+    </script>
 </body>
 </html>

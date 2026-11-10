@@ -23,5 +23,24 @@
     <div class="gallery">
         <img class="gallery-image" src="./Media/Gallery/boardwalkers.jpg">
     </div>
+        <div class="lightbox">
+        <img src="" alt="">
+    </div>
+
+    <script>
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImg = document.querySelector('.lightbox img');
+
+        document.querySelectorAll('.gallery-image').forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightbox.classList.add('open');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('open');
+        });
+    </script>
 </body>
 </html>

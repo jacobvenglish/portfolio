@@ -135,6 +135,7 @@ body{
     column-gap: 20px;
 }
 
+
 .dropdown a {
     text-decoration: none;
 }
@@ -182,4 +183,29 @@ html {
 
 .header a{
     text-decoration: none;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.95);
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    cursor: zoom-out;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.gallery-image {
+    cursor: zoom-in;
 }
