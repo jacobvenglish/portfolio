@@ -1,14 +1,22 @@
+* {
+    outline: 1px solid red;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
     font-family: Helvetica;
     color: #fafafa;
-    font-size: 100px ;
+    font-size: clamp(40px, 17.7px + 5.71vw, 100px);
     text-transform: uppercase;
 }
 
 h2{
     font-family: Helvetica;
     color: #fafafa;
-    font-size: 48px ;
+    font-size: clamp(32px, 26.1px + 1.52vw, 48px) ;
     text-transform: uppercase;
 
 }
@@ -16,41 +24,22 @@ h2{
 h3{
     font-family: Helvetica;
     color: #fafafa;
-    font-size: 32px ;
+    font-size: calmp(24px, 21px + 0.67vw, 32px) ;
     text-transform: uppercase;
 }
 
 h4{
     font-family: Helvetica;
     color: #fafafa;
-    font-size: 24px ;
+    font-size: clamp(19px, 17.13px + 0.48vw, 24px) ;
     text-transform: uppercase;
-}
-
-.hero{
-    padding-top: 48px;
-
 }
 
 p { 
     font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: clamp(17px, 15.9px + 0.29vw, 20px);
     color: #fafafa;
-    line-height: 25px;
-}
-
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    background-color: #0a0a0a;
-    padding: 30px 0;
-}
-
-a{
-    color: #fafafa;
+    line-height: 1.5;
 }
 
 body{
@@ -61,44 +50,80 @@ body{
     box-sizing: border-box; /* keeps total width at 1440, padding included */
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a{
+    color: #fafafa;
+}
+
+.hero{
+    padding-top: 48px;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #0a0a0a;
+    padding: 30px 0;
+    width: 100%;
+}
+
+#logo {
+    max-height: 75px;
+    width: auto;
+}
+
 .profile-pic{
-    max-height: 588px;
+    width: clamp(350px, 299.3px + 13vw , 488px);
+    height: auto;
     border: 5px solid #fafafa;
+    box-sizing: border-box;
 }
 
 .bio{
     display: flex;
+    flex-wrap: wrap;
+    gap: clamp(20px, -17.83px + 9.7vw, 122px);
+    justify-content: space-between;
 }
 
 .bio_text{
-    padding-left: 122px;
     max-width: 590px;
+    flex: 1 1 300px
 }
 
 .mini-gallery{
     justify-content: space-between;
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px ;
 }
 
 .photo-card{
-    width: 377px;
-    height: 377px;
+    width: clamp(350px, 339.86px + 2.6vh , 377px);
+    height: auto;
     border: 5px solid #fafafa;
+    box-sizing: border-box;
 }
 
-#logo {
-    max-height: 75px;
-}
 
 .mini-gallery-container{
-    padding-top: 128px;
-    padding-bottom: 100px;
+    padding-top: 7vw;
+    padding-bottom: 6.9vw;
 }
 
 
 .project-photo{
     width: 100%;
     border: 5px solid #fafafa;
+    box-sizing:border-box;
 }
 
 .project-header{
@@ -112,7 +137,9 @@ body{
 .gallery-image{
     width: 100%;
     max-width: 387px;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    cursor: crosshair;
+    border: 5px solid #fafafa;
 }
 
 @keyframes bounceAnimation {
@@ -177,10 +204,6 @@ body{
     display: block;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 .header a{
     text-decoration: none;
 }
@@ -206,6 +229,13 @@ html {
     object-fit: contain;
 }
 
-.gallery-image {
-    cursor: crosshair;
+
+/* Responsive Section */ 
+
+@media (Max-width: 900px) {
+    body{ padding: 0 40px}
+}
+
+@media (Max-width: 600px) {
+    body{ padding: 0 20px}
 }
