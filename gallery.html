@@ -32,6 +32,10 @@
     <div class="lightbox">
         <img src="" alt="">
     </div>
+        <div class="footer">
+        <h4><span id="slc-time"></span></h4>
+        <h4><span id="slc-weather"></span></h4>
+    </div>
 
     <script>
         const lightbox = document.querySelector('.lightbox');
@@ -47,6 +51,47 @@
         lightbox.addEventListener('click', () => {
             lightbox.classList.remove('open');
         });
+
+                function updateTime() {
+        const now = new Date();
+        const time = now.toLocaleTimeString('en-US', {
+            timeZone: 'America/Denver',
+            hour: 'numeric',
+            minute: '2-digit'
+        });
+        document.getElementById('slc-time').textContent = time;
+        }
+
+        updateTime();                    // run once right away
+        setInterval(updateTime, 1000);   // then again every second
+
+        async function updateWeather() {
+        const url = 'https://api.open-meteo.com/v1/forecast'
+            + '?latitude=40.76&longitude=-111.89'
+            + '&current=temperature_2m,weather_code'
+            + '&temperature_unit=fahrenheit';
+
+        const response = await fetch(url);
+        const data = await response.json();
+
+        const temp = Math.round(data.current.temperature_2m);
+        const condition = describeWeather(data.current.weather_code);
+
+        document.getElementById('slc-weather').textContent = temp + '°F ' + condition;
+    }
+
+    function describeWeather(code) {
+        if (code === 0) return 'Clear';
+        if (code <= 3) return 'Cloudy';
+        if (code <= 48) return 'Foggy';
+        if (code <= 67) return 'Rain';
+        if (code <= 77) return 'Snow';
+        if (code <= 82) return 'Showers';
+        if (code <= 86) return 'Snow';
+        return 'Storms';
+    }
+
+    updateWeather();
     </script>
 </body>
 </html>
