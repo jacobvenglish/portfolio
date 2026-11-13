@@ -24,7 +24,7 @@ h2{
 h3{
     font-family: Helvetica;
     color: #fafafa;
-    font-size: calmp(24px, 21px + 0.67vw, 32px) ;
+    font-size: clamp(24px, 21px + 0.67vw, 32px) ;
     text-transform: uppercase;
 }
 
@@ -61,7 +61,7 @@ a{
 }
 
 .hero{
-    padding-top: 48px;
+    gap: clamp(20px, 9.47px + 2.7vh ,48px);
 }
 
 .header{
@@ -76,92 +76,9 @@ a{
 }
 
 #logo {
-    max-height: 75px;
+    height: clamp(20px, -0.28px + 5.24vw, 75px);
     width: auto;
 }
-
-.profile-pic{
-    width: clamp(350px, 299.3px + 13vw , 488px);
-    height: auto;
-    border: 5px solid #fafafa;
-    box-sizing: border-box;
-}
-
-.bio{
-    display: flex;
-    flex-wrap: wrap;
-    gap: clamp(20px, -17.83px + 9.7vw, 122px);
-    justify-content: space-between;
-}
-
-.bio_text{
-    max-width: 590px;
-    flex: 1 1 300px
-}
-
-.mini-gallery{
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px ;
-}
-
-.photo-card{
-    width: clamp(350px, 339.86px + 2.6vh , 377px);
-    height: auto;
-    border: 5px solid #fafafa;
-    box-sizing: border-box;
-}
-
-
-.mini-gallery-container{
-    padding-top: 7vw;
-    padding-bottom: 6.9vw;
-}
-
-
-.project-photo{
-    width: 100%;
-    border: 5px solid #fafafa;
-    box-sizing:border-box;
-}
-
-.project-header{
-    padding-bottom: 20px;
-}
-
-.projectbox{
-    padding-bottom: 72px;
-}
-
-.gallery-image{
-    width: 100%;
-    max-width: 387px;
-    margin-bottom: 20px;
-    cursor: crosshair;
-    border: 5px solid #fafafa;
-}
-
-@keyframes bounceAnimation {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-30px); }
-}
-
-.gallery-image.gallery-image:hover {
-  animation-name: bounceAnimation;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-iteration-count: 2s;
-  animation-direction: normal;
-  animation-fill-mode: both;
-}
-
-.gallery{
-    padding-top: 128px;
-    columns: 3;
-    column-gap: 20px;
-}
-
 
 .dropdown a {
     text-decoration: none;
@@ -208,6 +125,96 @@ a{
     text-decoration: none;
 }
 
+.profile-pic{
+    width: clamp(350px, 299.3px + 13vw , 488px);
+    height: auto;
+    border: 5px solid #fafafa;
+    box-sizing: border-box;
+}
+
+.bio{
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(20px, -17.83px + 9.7vw, 122px);
+    justify-content: space-between;
+}
+
+.bio_text p:first-child {
+    margin-top: 0;
+}
+
+.bio_text{
+    max-width: 590px;
+    flex: 1 1 300px
+}
+
+.mini-gallery{
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(10px, 6.3px + 0.95vw, 20px);
+}
+
+.photo-card{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border: 5px solid #fafafa;
+    box-sizing: border-box;
+}
+
+
+.mini-gallery-container{
+    padding-top: 7vw;
+    padding-bottom: 7vw;
+}
+
+
+.project-photo{
+    width: 100%;
+    border: 5px solid #fafafa;
+    box-sizing:border-box;
+}
+
+.project-header{
+    padding-bottom: 20px;
+}
+
+.projectbox{
+    padding-bottom: 7vw;
+}
+
+.gallery-image{
+    width: 100%;
+    max-width: 387px;
+    cursor: crosshair;
+    border: 5px solid #fafafa;
+    box-sizing: border-box;
+    margin-bottom: clamp(10px, 6.3px + 0.95vw, 20px);
+}
+
+@keyframes bounceAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.gallery-image.gallery-image:hover {
+  animation-name: bounceAnimation;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-iteration-count: 2s;
+  animation-direction: normal;
+  animation-fill-mode: both;
+}
+
+.gallery{
+    padding-top: clamp(28px, 7vw, 48px);
+    columns: 3;
+    gap: clamp(10px, 6.3px + 0.95vw, 20px);
+}
+
+
 .lightbox {
     display: none;
     position: fixed;
@@ -230,6 +237,17 @@ a{
 }
 
 
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 100;
+    background-color: #0a0a0a;
+    padding: 30px 0;
+    width: 100%;
+}
+
 /* Responsive Section */ 
 
 @media (Max-width: 900px) {
@@ -238,4 +256,5 @@ a{
 
 @media (Max-width: 600px) {
     body{ padding: 0 20px}
+    .gallery{ column-count: 2; }
 }
